@@ -1,0 +1,24 @@
+{
+  "name": "electronsimplestarter",
+  "version": "1.0.0",
+  "description": "Electron Starter Template",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/acrosman/ElectronSimpleStarter.git"
+  },
+  "keywords": [
+    "Electron",
+    "Starter",
+    "Template"
+  ],
+  "author": "Aaron Crosman",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/acrosman/ElectronSimpleStarter/issues"
+  },
+  "homepage": "https://github.com/acrosman/ElectronSimpleStarter#readme"
+}
