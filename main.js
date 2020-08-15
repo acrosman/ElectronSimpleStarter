@@ -109,3 +109,14 @@ app.on('activate', () => {
     createWindow();
   }
 });
+
+/**
+ * Example IPC message handler.
+ */
+ipcMain.on('sample_message', (event, args) => {
+  // Sample useless response.
+  mainWindow.webContents.send('sample_response', {
+    message: 'This is a useless IPC message.',
+  });
+  return true;
+});
