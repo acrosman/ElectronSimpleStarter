@@ -36,6 +36,7 @@ function createWindow() {
       nodeIntegrationInWorker: false,
       nodeIntegrationInSubFrames: false,
       contextIsolation: true, // Protect against prototype pollution.
+      worldSafeExecuteJavaScript: true, // https://github.com/electron/electron/pull/24114
       enableRemoteModule: false, // Turn off remote to avoid temptation.
       preload: path.join(app.getAppPath(), 'app/preload.js'),
     },
