@@ -116,7 +116,7 @@ app.on('activate', () => {
 ipcMain.on('sample_message', (event, args) => {
   // Sample useless response.
   mainWindow.webContents.send('sample_response', {
-    message: 'This is a useless IPC message.',
+    message: 'Interface sent a message to main: ' + args.message_content,
   });
   return true;
 });
