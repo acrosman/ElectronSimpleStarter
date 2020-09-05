@@ -15,8 +15,9 @@ _You are responsible for the security of your own project._ There is definitly a
 
 1. `mkdir myproject`
 1. `cd myproject`
-1. `wget https://github.com/acrosman/ElectronSimpleStarter/archive/master.zip`
-1. `unzip master.zip .`
+1. `wget https://github.com/acrosman/ElectronSimpleStarter/archive/main.zip`
+1. `unzip main`
+1. `mv ElectronSimpleStarter-main/* ./; mv ElectronSimpleStarter-main/.gitignore ./`
 1. `npm i`
 1. Edit the project.json file to remove my name and repository information, add yours, and then you're off to the races to build your own app.
 
