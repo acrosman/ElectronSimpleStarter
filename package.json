@@ -18,11 +18,11 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "electron": "^9.3.2"
+    "electron": "^9.3.4"
   },
   "devDependencies": {
     "electron-debug": "^2.2.0",
-    "eslint": "^7.10.0"
+    "eslint": "^7.14.0"
   },
   "author": "Aaron Crosman",
   "license": "MIT",
