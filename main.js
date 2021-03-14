@@ -43,13 +43,7 @@ function createWindow() {
   });
 
   // and load the index.html of the app.
-  mainWindow.loadURL(
-      url.format({
-        pathname: path.join(app.getAppPath(), 'app/index.html'),
-        protocol: 'file:',
-        slashes: true,
-      }),
-  );
+  mainWindow.loadURL(`file://${__dirname}/app/index.html`);
 
   // Emitted when the window is closed.
   mainWindow.on('closed', () => {
