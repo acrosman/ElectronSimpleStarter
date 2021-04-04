@@ -13,12 +13,10 @@ _You are responsible for the security of your own project._ There is definitly a
 
 ## Using this Template:
 
-1. `mkdir myproject`
-1. `cd myproject`
-1. `wget https://github.com/acrosman/ElectronSimpleStarter/archive/main.zip`
-1. `unzip main`
-1. `mv ElectronSimpleStarter-main/* ./; mv ElectronSimpleStarter-main/.gitignore ./`
-1. `npm i`
+1. Click the "Use this template" button at the top right.
+1. Enter the name for your new repository, and click the "Create repository from template".
+1. Follow Github's directions to clone the repository your machine.
+1. Open a shell in your project directory (or open the project in your IDE and it's built in command prompt) and run: `npm i`
 1. Edit the project.json file to remove my name and repository information, add yours, and then you're off to the races to build your own app.
 
 ## Similar Projects
