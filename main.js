@@ -73,15 +73,15 @@ app.on('window-all-closed', () => {
 app.on('web-contents-created', (event, contents) => {
   // Block navigation.
   // https://electronjs.org/docs/tutorial/security#12-disable-or-limit-navigation
-  contents.on('will-navigate', (navevent) => {
+  contents.on("will-navigate", (navevent) => {
     navevent.preventDefault();
   });
-  contents.on('will-redirect', (navevent) => {
+  contents.on("will-redirect", (navevent) => {
     navevent.preventDefault();
   });
 
   // https://electronjs.org/docs/tutorial/security#11-verify-webview-options-before-creation
-  contents.on('will-attach-webview', (webevent, webPreferences) => {
+  contents.on("will-attach-webview", (webevent, webPreferences) => {
     // Strip away preload scripts.
     delete webPreferences.preload;
     delete webPreferences.preloadURL;
@@ -92,9 +92,7 @@ app.on('web-contents-created', (event, contents) => {
 
   // Block new windows from within the App
   // https://electronjs.org/docs/tutorial/security#13-disable-or-limit-creation-of-new-windows
-  contents.on('new-window', async (newevent) => {
-    newevent.preventDefault();
-  });
+  contents.setWindowOpenHandler(() => ({ action: "deny" }));
 });
 
 app.on('activate', () => {
