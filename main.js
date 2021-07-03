@@ -1,7 +1,7 @@
 const electron = require('electron');
 
 // Module to control application life.
-const {app, BrowserWindow, ipcMain} = electron;
+const { app, BrowserWindow, ipcMain, session } = electron;
 
 // Developer Dependencies.
 const isDev = !app.isPackaged;
@@ -93,6 +93,15 @@ app.on('web-contents-created', (event, contents) => {
   // Block new windows from within the App
   // https://electronjs.org/docs/tutorial/security#13-disable-or-limit-creation-of-new-windows
   contents.setWindowOpenHandler(() => ({ action: "deny" }));
+
+  // Lock down session permissions.
+  // https://www.electronjs.org/docs/tutorial/security#4-handle-session-permission-requests-from-remote-content
+  // https://github.com/doyensec/electronegativity/wiki/PERMISSION_REQUEST_HANDLER_GLOBAL_CHECK
+  session
+    .fromPartition('persist: secured-partition')
+    .setPermissionRequestHandler((webContents, permission, callback) => {
+      callback(false);
+    });
 });
 
 app.on('activate', () => {
