@@ -1,17 +1,11 @@
-const electron = require('electron');
-
-// Module to control application life.
-const { app, BrowserWindow, ipcMain, session } = electron;
+import { app, BrowserWindow, ipcMain, session, screen } from 'electron';
+import debug from 'electron-debug';
+import path from 'path';
 
 // Developer Dependencies.
 const isDev = !app.isPackaged;
-if (isDev) {
-  require("electron-debug")();
-}
 
-// Additional Tooling.
-const path = require('path');
-const url = require('url');
+debug();
 
 // Get rid of the deprecated default.
 app.allowRendererProcessReuse = true;
@@ -24,7 +18,7 @@ let mainWindow;
  * Create the main application window.
  */
 function createWindow() {
-  const display = electron.screen.getPrimaryDisplay();
+  const display = screen.getPrimaryDisplay();
   // Create the browser window.
   mainWindow = new BrowserWindow({
     width: display.workArea.width,
@@ -44,7 +38,7 @@ function createWindow() {
   });
 
   // and load the index.html of the app.
-  mainWindow.loadURL(`file://${__dirname}/app/index.html`);
+  mainWindow.loadURL(`file://${app.getAppPath()}/app/index.html`);
 
   // Emitted when the window is closed.
   mainWindow.on('closed', () => {
