@@ -19,7 +19,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "electron": "^32"
+    "electron": "^36"
   },
   "devDependencies": {
     "electron-debug": "^4",
